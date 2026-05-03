@@ -1,0 +1,8 @@
+# Environment (contains secrets)
+.env
+
+# SSH keys backup
+authorized_keys.bak
+
+# Claude settings
+.claude/

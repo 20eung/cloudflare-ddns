@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  cloudflare-ddns:
+    image: favonia/cloudflare-ddns:latest
+    container_name: cloudflare-ddns
+    restart: always
+    # .env 파일의 내용을 환경 변수로 불러옵니다.
+    environment:
+      - CF_API_TOKEN=${CF_API_TOKEN}
+      - CF_ZONEID=${CF_ZONE_ID}
+      - DOMAINS=${DOMAINS}
+      - PROXIED=${PROXIED}
+      - UPDATE_CRON=${UPDATE_CRON}
+      - IP4_PROVIDER=${IP4_PROVIDER}
+      - IP6_PROVIDER=${IP6_PROVIDER}
